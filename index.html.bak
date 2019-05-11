@@ -1,0 +1,344 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>龙龙的个人空间</title>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-app-capable" content="yes">
+    <meta name="apple-mobile-app-status-bar-style" content="black">
+   
+    <meta name="description" content="">
+    <meta name="keywords" content="后端，前端，编程，全栈，无聊">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="cononico">
+    <meta name="application-name" content="Cononico" >
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/process.css">
+    <link rel="shortcut icon"  type="image/x-icon" href="favicon.ico" />
+    
+    <script type="text/javascript">
+        //设定rem值
+        document.getElementsByTagName("html")[0].style.fontSize = document.documentElement.clientWidth/20 + 'px';
+    </script>
+</head>
+<body>
+	<header class="head">
+        <div class="head_logo_div">
+            <img class="logo_img" src="images/upload/head.jpg"></a>
+        </div>
+        <div class="head_nav_div">
+             <nav class="head_nav">
+                <ul id="nav_ul">
+                    <li class="nav_li_on nav_ul_li">主页</li>
+                    <li class="nav_ul_li">技能</li>
+                    <li class="nav_ul_li">经历</li>
+                    <li class="nav_ul_li">爱好</li>
+                    <li class="nav_ul_li">关于</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="clear"></div>
+    </header>
+    
+    <ul class="float_btn" id="float_btn">
+        <li class="btn_on"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+    <div class="wrapBox" id="wrapBox">
+        <div class="box">
+            <img class="box_bg" src="images/upload/pic_1.jpg">
+            <div class="box01_content">
+                <div class="head_div">
+                    <div class="cycle_item">
+                        <a href="#" class="github_a" id="github_a" target="_blank">
+                            <span class="github_icon"></span>
+                            <span class="github_text"><p class="item_name">GitHub</p></span>
+                        </a>
+                        <a href="#" class="weibo_a" id="weibo_a" target="_blank">
+                            <span class="weibo_icon"></span>
+                            <span class="weibo_text"><p class="item_name">微博</p> </span>
+                        </a>
+                        <a href="#" class="blog_a" id="blog_a" target="_blank">
+                            <span class="blog_icon"></span>
+                            <span class="blog_text"><p class="item_name"> 博客</p></span>
+                        </a>
+
+                        <div class="green_cycle">
+                            <img class="green_cycle_img" src="images/icon/green_cycle.svg">
+                            <div class="yellow_cycle">
+                                <img class="yellow_cycle_img" src="images/icon/yellow_cycle.svg">
+                                <div class="blue_cycle">
+                                    <img class="blue_cycle_img" src="images/icon/blue_cycle.svg">
+                                    <div class="head_img_div">
+                                        <img class="head_img" src="images/upload/head.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="title">关于我</h1>
+                <h2 class="title_h2">千里之行，始于足下</h2>
+                <div id="box01_text">
+                
+                <p class="box01_p">现在我还只是一个喜欢动漫和文学的学生党.</p>
+                
+                </div>
+            </div>
+            <div class="arrow_div">
+                <img class="arrow_img" src="images/icon/arrowhead.png">
+            </div>
+        </div>
+        
+        <div class="box">
+            <img class="box_bg" src="images/upload/pic_2.jpg">
+            
+            <div class="box02_content box_content">
+                <div id='bar_container' class="bar_container">
+                    <div class='bar mint' data-percent='70' data-skill='HTML5+CSS3'></div>
+                    <div class='bar red' data-percent='30' data-skill='JavaScript'></div>
+                    <div class='bar lila' data-percent='50' data-skill='前端工程化'></div>
+                    <div class='bar orange' data-percent='70' data-skill='数据库设计管理'></div>
+                    <div class='bar gray' data-percent='60' data-skill='Java&C# '></div>
+                    <div class="bar blue" data-percent='40' data-skill='PS&AI'></div>
+                    
+                </div>
+                <div id="box02_text">
+                    <h1>About Skill</h1>
+                    <div class="overline"></div>
+                    <p>2011,第一次接触是C/C++,在大学的课堂里</p>
+                    <p>2012,我接触到了C#</p>
+                    <p>2013年，开始我的数据库之旅</p>
+                    <p>2014,学习CSS+HTML5+JavaScript</p>
+                    <p>学的懵懵懂懂，一知半解</p>
+                    <p>2015,接触到JAVA,开始了解开源的力量，并不断探索这种力量</p>                    
+                    <p>现在正在接触微信公众号，人工智能，机器学习，大数据处理</p>
+                    
+                    <p>而未来...</p>
+                    <p>想成为一名优秀的软件开发后转管理人员，显然这还有很长的一段路要走</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+            
+            <div class="arrow_div">
+                <img class="arrow_img" src="images/icon/arrowhead.png">
+            </div>
+            
+        </div>
+        
+        <div class="box">
+            <img class="box_bg" src="images/upload/pic_3.jpg">
+            
+            <div class="box_content box03_content">
+                <ul id="timeUl" class="timeUl">
+                    <li>
+                        <div>
+                            <h1>2008-2011</h1>
+                            <p>庆阳第一中学</p>
+                            <p>最纯洁最无知的高中生涯</p>
+                            <p>貌似那时候很忙，整体压力很大</p>
+                            <p>高考的成绩真不理想，但又不想再来一年<p>
+                            <p>最后稀里糊涂选了海南大学，听说风景很美。。。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h1>2011-2015</h1>
+                            <p>海南大学</p>
+                            <p>这个学校发展真的很快。。</p>
+                            <p>我四年的青春岁月都留在了这里</p>
+                           <p>本来自己就是个懒散的人</p>
+						   <p>我不明白是否来对了地方</p>
+                        </div>
+                    </li>
+                    <li>
+                       <div>
+                            <h1>2015-NOW</h1>
+                            <p>继续海南大学读研</p>
+                            <p>总感觉有好多东西没学</p>
+                            
+                            <p>眷恋校园生活，嘻嘻</p>
+							<p>让我再呆两年。</p>
+                        </div>
+                    </li>
+                   
+                </ul>
+                 <div class="left_div" id="left_div">
+                     <img class="left_arrow" src="images/icon/arrowleft.png">
+                 </div>
+                 <div class="right_div" id="right_div">
+                      <img class="right_arrow" src="images/icon/arrowright.png">
+                 </div>
+            </div>
+            
+             <div class="arrow_div">
+                <img class="arrow_img" src="images/icon/arrowhead.png">
+            </div>
+        </div>
+        
+        
+        <div class="box">
+            
+            <img class="box_bg" src="images/upload/pic_4.jpg">
+            <div class="box_content box04_content">
+                <h1 class="box04_title">Something Of Hobby</h1>
+                <ul class="hobby_content">
+                    <li class="hobby_01">
+                        <div class="hobby_img_div">
+                            <div class="spinner spinner_01"></div>
+                            <div class="hobby_img">
+                                <img src="images/upload/kapok.jpg">
+                            </div>
+                            <div class="hobby_img_info">
+                                <h1>科技</h1>
+                                <h2>计算机&前沿</h2>
+                            </div>
+                        </div>
+                        <div class="hobby_text_div">
+                            <div class="hobby_img_info_mob">
+                                <h1>科技/<a>计算机&前沿</a></h1>
+                            </div>
+                            <p class="about_p">
+                                对于科学有种天生的喜爱和憧憬。尤其关注电子产品的发展和趋势。
+								喜欢摆弄计算机，装系统。
+                            </p>
+                            <p>
+                               关心科技发展前沿，总想着有一天自己也能像那些伟大的人一样
+							   改变世界
+                            </p>
+                        </div>
+                    </li>
+                    <li class="hobby_02">
+                        <div class="hobby_img_div">
+                            <div class="spinner spinner_02"></div>
+                            <div class="hobby_img">
+                                <img src="images/upload/acg.png">
+                            </div>
+                            <div class="hobby_img_info">
+                                <h1>Bili</h1>
+                                <h2>动漫&视频&dota</h2>
+                            </div>
+                        </div>
+                        <div class="hobby_text_div">
+                            <div class="hobby_img_info_mob">
+                                <h1>Bili/<a>动漫&视频&dota</a></h1>
+                            </div>
+                            <p class="about_p">
+                                入宅作《火影忍者》,这是我唯一一部从头看到现在的动漫，经典就是经典，虽然现在还在
+								更新，呵呵哒。一个不一样的世界，我也有我的忍道。
+                            </p>
+                            <p>
+                                没事闲逛哔哩哔哩，主要是高清无广告，鬼畜神马的最喜欢了。
+                            </p>
+                        </div>
+                    </li>
+                    <li class="hobby_03">
+                        <div class="hobby_img_div">
+                            <div class="spinner spinner_03"></div>
+                            <div class="hobby_img">
+                                <img src="images/upload/reading.jpg">
+                            </div>
+                            <div class="hobby_img_info">
+                                <h1>文学</h1>
+                                <h2>小说&名著</h2>
+                            </div>
+                        </div>
+                        <div class="hobby_text_div">
+                            <div class="hobby_img_info_mob">
+                                <h1>文学/<a>历史&写作</a></h1>
+                            </div>
+                            <p class="about_p">
+                                以前看到什么世界名著啥的，总感觉逼格很高，总是找来读读。
+								读别人的世界，别人的故事，别人的感想。
+								不得不说，书确实是个好东西。
+
+                            </p>
+                           <p class="about_p">
+                                我特别喜欢法国大仲马的文学作品，什么基督山伯爵，三个火枪手。
+								喜欢那种自由开放的感觉。如今想来，好久都没读了，哎。。
+
+                            </p>
+                        </div>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+             <div class="arrow_div">
+                <img class="arrow_img" src="images/icon/arrowhead.png">
+            </div>
+        </div>
+        
+        <foot id="foot" class="foot">
+            <h1 class="foot_title">Contact With Me</h1>
+            <div class="foot_info_main">
+                <ul>
+                    <li class="github_items">
+                        <a href="#" target="_blank">GitHub</a>
+                    </li>
+                    <li class="google_items">
+                        <a href="#" target="_blank">Google+</a>
+                    
+                    </li>
+                    <li class="twitter_items">
+                        <a href="#" target="_blank">Twitter</a>
+                    
+                    </li>
+                    <li class="facebook_items">
+                        <a href="#" target="_blank">FaceBook</a>
+                    
+                    </li>
+                    <li class="weibo_items">
+                        <a href="#" target="_blank">微博</a>
+                    
+                    </li>
+                    <li class="zhihu_items">
+                        <a href="#" target="_blank">知乎</a>
+                    
+                     </li>
+                     <li class="blog_items">
+                        <a href="#" target="_blank">博客</a>
+                    
+                     </li>
+                     <li class="email_items">
+                        <a href="mailto:min@coolecho.net" target="_blank">邮箱</a>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+                <div class="qrcode_div">
+                    <span class="weixin">
+                        <a class="weixin_icon"></a>
+                        <img class="weixin_img" src="images/upload/wenxin_qr.png">
+                    </span>
+					<!--
+                    <span class="dingding">
+                        <a class="dingding_icon"></a>
+                        <img class="dingding_img" src="#">
+                    </span>
+					-->
+                    <span class="qq">
+                        <a class="qq_icon"></a>
+                        <img class="qq_img" src="images/upload/qq_qr.jpg">
+                    </span>
+                </div>
+            </div>
+            <div class="foot_power">
+                <h3>©2016 Pwoerd 
+                    <a href="#" title="Night" target="_blank"> long</a>
+                    <a href="#" title="IceEnd">龙的空间</a>
+                    <a href="#" title="beian" target="_blank">银河c40000000号</a>
+                </h3>
+            </div>
+        </foot>
+    </div>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+    
+</html>
+
+ 

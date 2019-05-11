@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+		<title>叠加云数据图层</title>
+		<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main.css?v=1.0" />
+		<link rel="stylesheet" type="text/css" href="css/yunTu.css" />
+		<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=2ca955f1e7aa0e509a9b1ba73b3e0b54"></script>
+		<style type="text/css">
+			.title {
+				font: 13px 'Microsoft Yahei';
+				color: #09f
+			}
+			
+			#panel {
+				position: absolute;
+				background-color: white;
+				max-height: 90%;
+				overflow-y: auto;
+				top: 10px;
+				right: 10px;
+				width: 200px;
+			}
+		</style>
+
+	</head>
+
+	<body style='font-size:12px'>
+		<div id="mapContainer"></div>
+		<div id="panel"></div>
+		<div id="myPageTop">
+			<label>请输入关键字：</label>
+			<input id="tipinput" />
+			<input id="btSearch" type="button" value="搜索" />
+		</div>
+
+		<script type="text/javascript">
+			//初始化地图对象，加载地图
+			var map = new AMap.Map("mapContainer", {
+				resizeEnable: true,
+				//				isHotspot:true,//是否开启热点地图
+				scrollWheel: true, //是否通过鼠标滚轮缩放
+				mapStyle: 'normal', //设置地图显示样式，目前支持normal（默认样式）、dark（深色样式）、light（浅色样式）、fresh(osm清新风格样式)四种 
+				//				dragEnable: false,//平移拖拽
+				//				keyboardEnable: false,//键盘平移
+				//				doubleClickZoom: false,//双击放大
+				center: [110.3271691370, 20.0571437583], //地图中心点
+				zoom: 16 //地图显示的缩放级别
+			});
+
+			//			//限制显示范围  西南点和东北点控制显示范围  
+			var bounds = new AMap.Bounds(new AMap.LngLat(110.3181960000, 20.0465540000), new AMap.LngLat(110.3454100000, 20.0691380000));
+			map.setLimitBounds(bounds);
+
+			//工具条、比例尺、鹰眼、类别切换
+			AMap.plugin(['AMap.ToolBar', 'AMap.Scale', 'AMap.OverView', 'AMap.MapType'], function() {
+					var toolBar = new AMap.ToolBar();
+					toolBar.showDirection();
+					toolBar.hideRuler();
+					var scale = new AMap.Scale();
+					map.addControl(toolBar);
+					map.addControl(scale);
+					map.addControl(new AMap.OverView({
+						isOpen: true
+					}));
+					//map.addControl(new AMap.MapType());
+				})
+				//叠加云数据图层
+			function addCloudLayer() {
+				//加载云图层插件
+				map.plugin('AMap.CloudDataLayer', function() {
+					var layerOptions = {
+						//query: {keywords: ''},
+						clickable: true
+					};
+					var cloudDataLayer = new AMap.CloudDataLayer('579dbda4305a2a6e27d60a86', layerOptions); //实例化云图层类
+					cloudDataLayer.setMap(map); //叠加云图层到地图
+
+					AMap.event.addListener(cloudDataLayer, 'click', function(result) {
+						var clouddata = result.data;
+						var photo = [];
+						if(clouddata._image[0]) { //如果有上传的图片
+							photo = ['<img width=240 height=100 src="' + clouddata._image[0]._preurl + '"><br>'];
+						}
+						var linkpoint = '';
+						//              if(clouddata.linkpoint!=null){//如果有链接地址
+						//                  linkpoint='<h4><a href="'+clouddata.linkpoint+'">点此进入漫游</a></h4><br>';
+						//              }
+						linkpoint = '<h4><a href="vtourPoints/' + clouddata.linkpoint + '/vtour/tour.html" target="-blank">点此进入漫游</a></h4><br>';
+
+						var infoWindow = new AMap.InfoWindow({
+							//content: "<font class='title'>" + clouddata._name + "</font><hr/>" + photo.join("") + linkpoint + "地址：" + clouddata._address + "<br />" + "创建时间：" + clouddata._createtime + "<br />" + "更新时间：" + clouddata._updatetime,
+							content: "<font class='title'>" + clouddata._name + "</font><hr/>" + photo.join("") + linkpoint + "简介：" + clouddata.desc + "<br />" + "地址：" + clouddata._address,
+							size: new AMap.Size(0, 0),
+							autoMove: true,
+							offset: new AMap.Pixel(0, -25)
+						});
+
+						infoWindow.open(map, clouddata._location);
+					});
+				});
+			}
+
+			function addInfoWindow(clouddata) {
+				var photo = [];
+				if(clouddata._image[0]) { //如果有上传的图片
+					photo = ['<img width=240 height=100 src="' + clouddata._image[0]._preurl + '"><br>'];
+				}
+				var linkpoint = '';
+				//              if(clouddata.linkpoint!=null){//如果有链接地址
+				//                  linkpoint='<h4><a href="'+clouddata.linkpoint+'">点此进入漫游</a></h4><br>';
+				//              }
+				linkpoint = '<h4><a href="vtourPoints/' + clouddata.linkpoint + '/vtour/tour.html" target="-blank">点此进入漫游</a></h4><br>';
+
+				var infoWindow = new AMap.InfoWindow({
+					//content: "<font class='title'>" + clouddata._name + "</font><hr/>" + photo.join("") + linkpoint + "地址：" + clouddata._address + "<br />" + "创建时间：" + clouddata._createtime + "<br />" + "更新时间：" + clouddata._updatetime,
+					content: "<font class='title'>" + clouddata._name + "</font><hr/>" + photo.join("") + linkpoint + "简介：" + clouddata.desc + "<br />" + "地址：" + clouddata._address,
+					size: new AMap.Size(0, 0),
+					autoMove: true,
+					offset: new AMap.Pixel(0, -25)
+				});
+
+				infoWindow.open(map, clouddata._location);
+
+			}
+			addCloudLayer();
+
+			//云图数据搜索
+			var center = [110.3271691370, 20.0571437583];
+
+			//周边检索
+			//search.searchNearBy(center, 100, function() {});
+
+			function cloudSearch_CallBack(status, data) {
+//				 var clouddata;
+				 
+//				for ( var i=0;i<data.datas.length;i++) {
+//					clouddata=data.datas[i];
+//					
+//					//addInfoWindow(clouddata);
+//				}
+
+				var clouddata = data.datas[0];
+				addInfoWindow(clouddata);
+
+				map.setCenter(clouddata._location);
+				
+				//添加marker
+				//var location = clouddata._location;
+				//var marker = new AMap.Marker({
+				//map: map,
+				//position: location
+				//});
+				//map.setCenter(marker.getPosition());
+
+			}
+			var tipinput = document.getElementById('tipinput');
+			var btSearch = document.getElementById('btSearch');
+			var listener1 = AMap.event.addDomListener(btSearch, 'click', bind); //给div绑定单击事件  
+			function bind() {
+				if(tipinput.value==""){
+					alert('请输入正确查询条件！');
+					return false;
+				}
+				var searchOptions = {
+					//map: map,
+					panel: '',
+					keywords:tipinput.value,
+					pageSize: 5,
+					orderBy: '_id:ASC'
+				};
+				//加载CloudDataSearch服务插件
+				//search = new AMap.CloudDataSearch('579dbda4305a2a6e27d60a86', searchOptions); //构造云数据检索类
+				search = new AMap.CloudDataSearch('579dbda4305a2a6e27d60a86', searchOptions); //构造云数据检索类
+				search.searchNearBy(center, 2000, cloudSearch_CallBack);
+				//searchOptions.
+				//search.searchById("2", cloudSearch_CallBack);
+			}
+		</script>
+	</body>
+
+</html>
